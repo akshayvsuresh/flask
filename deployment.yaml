@@ -14,7 +14,7 @@ spec:
       containers:
         - name: flask
           image: akshayvsuresh/flask:latest
-  replicas: 4
+  replicas: 3
   selector:
     matchLabels:
       app: flask
