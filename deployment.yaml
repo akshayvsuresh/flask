@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: appdeployment
+  labels:
+    app: flask
+spec:
+  template:
+    metadata:
+      name: flask app
+      labels:
+        app: flask
+    spec:
+      containers:
+        - name: flask
+          image: akshayvsuresh/flask:latest
+  replicas: 4
+  selector:
+    matchLabels:
+      app: flask
