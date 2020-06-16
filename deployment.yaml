@@ -13,8 +13,8 @@ spec:
     spec:
       containers:
         - name: flask
-          image: akshayvsuresh/flask:latest
-  replicas: 2
+          image: akshayvsuresh/flask
+  replicas: 4
   selector:
     matchLabels:
       app: flask
