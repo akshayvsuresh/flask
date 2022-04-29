@@ -11,7 +11,7 @@ jobs:
     steps:
       - checkout
       - run: |
-          ls
+          pwd
   example-job:
     docker:
       # replace with your preferred image
