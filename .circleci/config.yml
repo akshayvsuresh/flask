@@ -1,16 +1,27 @@
 version: 2.1
 orbs:
   docker: circleci/docker@1.7.0
+executors:
+  my-custom-executor:
+    docker:
+      - image: cimg/base:stable
 jobs:
+  my-job-name:
+    executor: my-custom-executor
+    steps:
+      - checkout
+      - run: |
+          # echo Hello, World!
   example-job:
     docker:
       # replace with your preferred image
       - image: cimg/base:stable
     steps:
       - docker/build:
-          image: akshay 
-
+          image: akshay         
 workflows:
-  example-workflow:
+  my-custom-workflow:
     jobs:
+      - my-job-name
       - example-job
+
