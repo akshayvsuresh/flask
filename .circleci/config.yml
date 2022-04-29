@@ -11,7 +11,7 @@ jobs:
     steps:
       - checkout
       - run: |
-          # echo Hello, World!
+          ls
   example-job:
     docker:
       # replace with your preferred image
