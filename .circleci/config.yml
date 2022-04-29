@@ -1,20 +1,16 @@
 version: 2.1
-executors:
-  my-custom-executor:
-    docker:
-      - image: cimg/base:stable
-        auth:
-          # ensure you have first added these secrets
-          # visit app.circleci.com/settings/project/github/akshayvsuresh/flask/environment-variables
-
+orbs:
+  docker: circleci/docker@1.7.0
 jobs:
-  my-job-name:
-    executor: my-custom-executor
+  example-job:
+    docker:
+      # replace with your preferred image
+      - image: cimg/base:stable
     steps:
-      - checkout
-      - run: |
-          # echo Hello, World!
+      - docker/build:
+          image: akshay 
+
 workflows:
-  my-custom-workflow:
+  example-workflow:
     jobs:
-      - my-job-name
+      - example-job
